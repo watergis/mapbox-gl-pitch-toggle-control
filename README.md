@@ -1,4 +1,7 @@
 # mapbox-gl-pitch-toggle-control
+![](https://github.com/watergis/mapbox-gl-pitch-toggle-control/workflows/Node.js%20Package/badge.svg)
+![GitHub](https://img.shields.io/github/license/watergis/mapbox-gl-pitch-toggle-control)
+
 Simple pitch on/off button in Mapbox GL JS style. 
 
 I forked [tobinbradley/mapbox-gl-pitch-toggle-control](https://github.com/tobinbradley/mapbox-gl-pitch-toggle-control) repository, then changed it to typescript and registered package. I also did some changes for optional parameters.
