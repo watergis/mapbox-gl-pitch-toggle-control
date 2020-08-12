@@ -1,6 +1,6 @@
 {
   "name": "@watergis/mapbox-gl-pitch-toggle-control",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple pitch on/off button in Mapbox GL JS style. ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

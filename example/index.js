@@ -16,6 +16,6 @@ $(function(){
     map.addControl(new MapboxPitchToggleControl({
         pitch: 70,
         bearing: null,
-        minpitchzoom: null
+        minpitchzoom: null,
     }), 'top-right');
 })
