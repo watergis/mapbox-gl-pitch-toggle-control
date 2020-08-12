@@ -1,5 +1,11 @@
 import { IControl, Map as MapboxMap } from "mapbox-gl";
 
+type Options = {
+    pitch: number,
+    bearing: number,
+    minpitchzoom: number,
+}
+
 export default class MapboxPitchToggleControl implements IControl{
     
     private _container: HTMLElement;
@@ -7,7 +13,7 @@ export default class MapboxPitchToggleControl implements IControl{
     private _btn: HTMLButtonElement;
 
     private _bearing: number | null;
-    private _pitch: number;
+    private _pitch: number | null;
     private _minpitchzoom: number | null;
 
     /**
@@ -17,10 +23,10 @@ export default class MapboxPitchToggleControl implements IControl{
      * @param {number} options.bearing - Bearing for 3d mode. Default is NULL.
      * @param {number} options.minpitchzoom - Minimum zoom level for 3D mode, so you don't have flying polygons gouging out eyeballs. Default it null (i.e. stays at same zoom).
      */
-    constructor({pitch = 70, bearing = null, minpitchzoom = null,}) {
-        this._bearing = bearing;
-        this._pitch = pitch;
-        this._minpitchzoom = minpitchzoom;
+    constructor(options: Options) {
+        this._pitch = options.pitch || 70;
+        this._bearing = options.bearing || null;
+        this._minpitchzoom = options.minpitchzoom || null;
     }
 
     onAdd(map: MapboxMap): HTMLElement {
@@ -33,7 +39,7 @@ export default class MapboxPitchToggleControl implements IControl{
         this._btn['aria-label'] = 'Toggle Pitch';
         this._btn.onclick = function() { 
             if (map.getPitch() === 0) {
-                let options = {pitch: _this._pitch, bearing: 0, zoom: map.getZoom()};
+                let options: any = {pitch: _this._pitch, bearing: 0, zoom: map.getZoom()};
                 if (!_this._bearing){
                     options.bearing = map.getBearing();
                 }else{
