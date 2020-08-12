@@ -1,9 +1,9 @@
 import { IControl, Map as MapboxMap } from "mapbox-gl";
 
 type Options = {
-    pitch?: number,
-    bearing?: number,
-    minpitchzoom?: number,
+    pitch?: number | null,
+    bearing?: number | null,
+    minpitchzoom?: number | null,
 }
 
 export default class MapboxPitchToggleControl implements IControl{
