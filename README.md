@@ -13,9 +13,11 @@ npm i @watergis/mapbox-gl-pitch-toggle-control --save
 ```
 ## Demo:
 
-![demo](https://i.imgur.com/iW7CQ23.gif)
+Try [codesandbox](https://codesandbox.io/s/mapbox-gl-pitch-toggle-control-de3j5?file=/src/index.ts)
 
 See [demo](https://watergis.github.io/mapbox-gl-pitch-toggle-control/).
+
+![demo](https://i.imgur.com/iW7CQ23.gif)
 
 ## Usage:
 ```ts
